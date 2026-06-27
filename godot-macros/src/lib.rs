@@ -1383,6 +1383,9 @@ pub fn godot_dyn(_meta: TokenStream, input: TokenStream) -> TokenStream {
 /// This is useful for cases where you want to have generics in Rust, but you still want to use that struct from Godot. For example, you have a
 /// key `Key<T>` to a registry `Registry<T>` that contains `T`.
 /// ```no_run
+/// use godot::prelude::*;
+/// use std::marker::PhantomData;
+///
 /// #[derive(GodotConvert)]
 /// #[godot(transparent)]
 /// struct Key<T> {
